@@ -41,7 +41,15 @@
             "post-install": [
                 "install -t /app/share/icons/hicolor/128x128/apps/ -Dm644 com.github.hopsan.Hopsan.png",
                 "install -t /app/share/applications/ -Dm644 com.github.hopsan.Hopsan.desktop",
-                "install -t /app/share/appdata/ -Dm644 com.github.hopsan.Hopsan.appdata.xml"
+                "install -t /app/share/appdata/ -Dm644 com.github.hopsan.Hopsan.appdata.xml",
+                /* Copy needed C++ compiler files from SDK */
+                "install -t /app/bin/ -Dm555 /usr/bin/gcc",
+                "install -t /app/bin/ -Dm555 /usr/bin/g++",
+                "install -t /app/bin/ -Dm555 /usr/bin/x86_64-unknown-linux-gnu-g++",
+                "install -t /app/bin/ -Dm555 /usr/bin/x86_64-unknown-linux-gnu-gcc",
+                "install -t /app/bin/ -Dm555 /usr/libexec/gcc/x86_64-unknown-linux-gnu/8.3.0/cc1",
+                "install -t /app/bin/ -Dm555 /usr/libexec/gcc/x86_64-unknown-linux-gnu/8.3.0/cc1plus",
+                "install -t /app/bin/ -Dm555 /usr/libexec/gcc/x86_64-unknown-linux-gnu/8.3.0/collect2"
             ],
             "sources": [
                 {
